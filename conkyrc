@@ -1,0 +1,46 @@
+conky.config = {
+    alignment = 'top_left',
+    background = true,
+    border_width = 1,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    font = 'Roboto:pixelsize=20;5',
+    gap_x = 50,
+    gap_y = 20,
+    minimum_height = 0,
+    minimum_width = 5,
+    maximum_width = 500,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'override',
+    own_window_transparent=true,
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 2.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+
+    color1 = "#63d8e1",
+    color3 = "#a2dde1",
+    color2 = "#ffffff",
+}
+
+conky.text = [[
+${color1}${font Roboto:style=Light:pixelsize=125}${time %H:%M}${font}${color}
+${color3}${font Roboto:pixelsize=25}${time %A %d %B %Y}${font}${color}
+${color2}${execi 300 python3 ~/.scripts/daily.py 30}${color}
+]]
