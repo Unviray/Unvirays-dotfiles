@@ -11,7 +11,8 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'Roboto:pixelsize=20;5',
+    font = 'Roboto:pixelsize=15;5',
+    -- font = 'Roboto:pixelsize=20;5',
     gap_x = 50,
     gap_y = 20,
     minimum_height = 0,
@@ -34,13 +35,15 @@ conky.config = {
     use_spacer = 'none',
     use_xft = true,
 
-    color1 = "#63d8e1",
-    color3 = "#a2dde1",
+    color1 = "#ffffff",
+    color3 = "#ffffff",
     color2 = "#ffffff",
 }
 
 conky.text = [[
-${color1}${font Roboto:style=Light:pixelsize=125}${time %H:%M}${font}${color}
-${color3}${font Roboto:pixelsize=25}${time %A %d %B %Y}${font}${color}
-${color2}${execi 300 python3 ~/.scripts/daily.py 30}${color}
+${color1}${font Roboto:style=Bold:pixelsize=60}${time %H:%M}${font}${color}
+#${color3}${font Roboto:pixelsize=20}${time %A %d %B %Y}${font}${color}
+${voffset 15}${color3}${font Roboto:pixelsize=24}${time %A %d %B}${font}${color}
+#${color2}${execi 300 python3 ~/.scripts/daily.py 30}${color}
+${voffset 10}${color2}${execi 300 python3 ~/.scripts/daily.py 45}${color}
 ]]

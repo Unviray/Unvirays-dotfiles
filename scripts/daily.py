@@ -86,7 +86,6 @@ def get_text():
 
     i = 0
     text_list = list()
-
     for element in parse(get_month_file()).iter():
         if i >= 2:
             break
